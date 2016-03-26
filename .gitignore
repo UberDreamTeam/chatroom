@@ -7,9 +7,7 @@ plugins/
 
 .tmp
 .sass-cache
-**/bower_components or sometimes it is lib/**
 bower_components
-lib
 plugins
 *.swp
 *.swo
