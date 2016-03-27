@@ -31,6 +31,11 @@
         from: 'max',
         content: 'WTF man',
         date: '13:57 26 March 2015'
+      },
+      {
+        from: 'Simon',
+        content: 'I\'m a noo000000b',
+        date: '13:57 26 March 2015'
       }
     ];
   });
