@@ -20,14 +20,21 @@
 
     <!-- your app's js -->
     <script src="js/app.js"></script>
+    <script src="js/services/SocketService.js"></script>
+    <script src="js/controllers/ChatController.js"></script>
+
+    <!-- dependencies -->
+    <script src="lib/socket.io-client/socket.io.js"></script>
+    <!-- AngularJS wit socket.io -->
+    <script src="lib/angular-socket-io/socket.js"></script>
   </head>
   <body ng-app="chatRoom">
 
-    <ion-pane>
+    <ion-pane ng-controller="ChatController">
       <ion-header-bar class="bar-stable">
         <h1 class="title">Chatroom</h1>
       </ion-header-bar>
-      <ion-content ng-controller="BasicController">
+      <ion-content>
         <div class="card" ng-repeat="message in messages">
           <div class="item item-text-wrap">
             {{message.content}}
@@ -37,6 +44,10 @@
           </div>
         </div>
       </ion-content>
+      <div class="bar bar-footer">
+        <input name="message" ng-model="message"/>
+        <button ng-click="sendMessage()">Send</button>
+      </div>
     </ion-pane>
   </body>
 </html>

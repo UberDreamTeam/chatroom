@@ -1,6 +1,6 @@
 (function () {
 
-  var app = angular.module('chatRoom', ['ionic']);
+  var app = angular.module('chatRoom', ['ionic', 'btford.socket-io']);
 
   app.run(function($ionicPlatform) {
     $ionicPlatform.ready(function() {
@@ -20,24 +20,6 @@
   });
   });
 
-  app.controller('BasicController', function ($scope) {
-    $scope.messages = [
-      {
-        from: 'kuan',
-        content: 'WTF',
-        date: '13:56 26 March 2015'
-      },
-      {
-        from: 'max',
-        content: 'WTF man',
-        date: '13:57 26 March 2015'
-      },
-      {
-        from: 'Simon',
-        content: 'I\'m a noo000000b',
-        date: '13:57 26 March 2015'
-      }
-    ];
-  });
+  
 
 })();
