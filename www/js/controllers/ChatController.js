@@ -6,10 +6,12 @@
     var messages = $firebaseArray(messagesReference);
 
     $scope.messages = messages;
+
     $scope.sendMessage = function () {
       $scope.messages.$add({
         content: $scope.message,
-        from: 'kuan'
+        from: 'kuan',
+        timestamp: new Date().toString()
       });
 
       $scope.message = '';

@@ -1,6 +1,6 @@
 (function () {
 
-  var app = angular.module('chatRoom', ['ionic', 'firebase']);
+  var app = angular.module('chatRoom', ['ionic', 'firebase', 'angularMoment']);
 
   app.run(function($ionicPlatform) {
     $ionicPlatform.ready(function() {
