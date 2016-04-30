@@ -1,19 +1,19 @@
 (function () {
-  angular.module('chatRoom').controller('ChatController', function ($scope, SocketService) {
-    //SocketService.emit('chat message', "what the fuck");
-    $scope.messages = [];
+  angular.module('chatRoom').controller('ChatController', function ($scope, $firebaseArray) {
 
+    var firebaseReference = new Firebase("https://chatrroom-app.firebaseio.com/");
+    var messagesReference = firebaseReference.child('messages');
+    var messages = $firebaseArray(messagesReference);
+
+    $scope.messages = messages;
     $scope.sendMessage = function () {
-      SocketService.emit('chat message', $scope.message);
+      $scope.messages.$add({
+        content: $scope.message,
+        from: 'kuan'
+      });
+
       $scope.message = '';
     };
-
-    SocketService.on('chat message', function(message){
-      $scope.messages.push({
-        from: 'Kuan',
-        content: message,
-        date: '12:22 09 April 2016'
-      });
-    });
   });
+
 })();

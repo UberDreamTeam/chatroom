@@ -1,6 +1,6 @@
 (function () {
 
-  var app = angular.module('chatRoom', ['ionic', 'btford.socket-io']);
+  var app = angular.module('chatRoom', ['ionic', 'firebase']);
 
   app.run(function($ionicPlatform) {
     $ionicPlatform.ready(function() {
